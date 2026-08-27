@@ -264,6 +264,21 @@
   </div>
 </div>
 
+<!-- VIDEO MODAL -->
+<div id="videoModal" class="hidden fixed inset-0 z-[200] bg-black/90 backdrop-blur-sm flex items-center justify-center px-4">
+  <div class="w-full max-w-md">
+    <div class="flex items-center justify-between mb-2">
+      <p class="font-mono text-[10px] text-[#39FF6A] tracking-widest" id="videoModalTitle">FORM VIDEO</p>
+      <button id="videoModalClose" class="btn-press w-8 h-8 rounded-lg bg-[#121212] border border-[#1E1E1E] text-[#8A8A8A] flex items-center justify-center">✕</button>
+    </div>
+    <div class="rounded-xl overflow-hidden border border-[#1E1E1E] bg-black aspect-video">
+      <iframe id="videoModalFrame" class="w-full h-full" src="" title="Exercise form video"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <a id="videoModalOpenExternal" href="#" target="_blank" rel="noopener" class="mt-3 block text-center font-mono text-[10px] tracking-wider text-[#4E4E4E] underline underline-offset-4">CAN'T SEE IT? OPEN ON YOUTUBE</a>
+  </div>
+</div>
+
 <script>
 (function(){
   "use strict";
@@ -275,32 +290,32 @@
     day1: {
       label: "DAY 1", title: "PUSH", subtitle: "Chest · Shoulders · Triceps", type:"workout",
       exercises: [
-        { name:"Incline DB Press", target:"3 sets × 8-12 reps", tag:"UPPER CHEST" },
-        { name:"Chest Press Machine", target:"3 sets × 8-10 reps", tag:"CHEST THICKNESS" },
-        { name:"Cable Lateral Raises", target:"4 sets × 10-15 reps", tag:"3D SHOULDERS" },
-        { name:"Cable Tricep Pushdown", target:"3 sets × 10-12 reps", tag:"TRICEP PUMP" },
-        { name:"Overhead Cable Tricep Extension", target:"3 sets × 10-12 reps", tag:"LONG HEAD TRICEPS" },
+        { name:"Incline DB Press", target:"3 sets × 8-12 reps", tag:"UPPER CHEST", videoId:"OC7Qs_SAO2E" },
+        { name:"Chest Press Machine", target:"3 sets × 8-10 reps", tag:"CHEST THICKNESS", videoId:"0hiM3PE4f-Y" },
+        { name:"Cable Lateral Raises", target:"4 sets × 10-15 reps", tag:"3D SHOULDERS", videoId:"oBnlhLf6sxM" },
+        { name:"Cable Tricep Pushdown", target:"3 sets × 10-12 reps", tag:"TRICEP PUMP", videoId:"-zLyUAo1gMw" },
+        { name:"Overhead Cable Tricep Extension", target:"3 sets × 10-12 reps", tag:"LONG HEAD TRICEPS", videoId:"7hx0-DZgdl8" },
       ]
     },
     day2: {
       label: "DAY 2", title: "PULL", subtitle: "Back · Biceps · Rear Delts · Forearms", type:"workout",
       exercises: [
-        { name:"Lat Pulldown", target:"3 sets × 8-12 reps", tag:"WIDE BACK" },
-        { name:"Seated Cable Row", target:"3 sets × 8-12 reps", tag:"BACK THICKNESS" },
-        { name:"Dumbbell / Cable Bicep Curls", target:"3 sets × 10-12 reps", tag:"BIG BICEPS" },
-        { name:"Face Pulls (Cable)", target:"3 sets × 12-15 reps", tag:"REAR DELTS" },
-        { name:"Seated Wrist Curls", target:"3 sets × 15-20 reps", tag:"FOREARM STRENGTH" },
+        { name:"Lat Pulldown", target:"3 sets × 8-12 reps", tag:"WIDE BACK", videoId:"oMJmAHRZXBk" },
+        { name:"Seated Cable Row", target:"3 sets × 8-12 reps", tag:"BACK THICKNESS", videoId:"8QuMq1GMMng" },
+        { name:"Dumbbell / Cable Bicep Curls", target:"3 sets × 10-12 reps", tag:"BIG BICEPS", videoId:"0OA-DqdTyZA" },
+        { name:"Face Pulls (Cable)", target:"3 sets × 12-15 reps", tag:"REAR DELTS", videoId:"MChHOiaCR7s" },
+        { name:"Seated Wrist Curls", target:"3 sets × 15-20 reps", tag:"FOREARM STRENGTH", videoId:"iJE6r0wPXeA" },
       ]
     },
     day3: {
       label: "DAY 3", title: "LEGS & ABS", subtitle: "Quads · Hamstrings · Lower Back · Calves · Core", type:"workout",
       exercises: [
-        { name:"Leg Press", target:"3 sets × 8-12 reps", tag:"HEAVY LEGS" },
-        { name:"Leg Extension", target:"4 sets × 10-15 reps", tag:"VMO / KNEE BUILDER" },
-        { name:"Lying Leg Curls", target:"3 sets × 10-12 reps", tag:"HAMSTRINGS" },
-        { name:"Hyperextensions", target:"3 sets × 10-12 reps", tag:"LOWER BACK & GLUTES" },
-        { name:"Standing / Seated Calf Raises", target:"4 sets × 15-20 reps", tag:"BIG CALVES" },
-        { name:"Hanging Leg Raises / Crunches", target:"3 sets to failure", tag:"CORE STRENGTH" },
+        { name:"Leg Press", target:"3 sets × 8-12 reps", tag:"HEAVY LEGS", videoId:"nDh_BlnLCGc" },
+        { name:"Leg Extension", target:"4 sets × 10-15 reps", tag:"VMO / KNEE BUILDER", videoId:"xAUvXdHu1sI" },
+        { name:"Lying Leg Curls", target:"3 sets × 10-12 reps", tag:"HAMSTRINGS", videoId:"KqKCetIo7Aw" },
+        { name:"Hyperextensions", target:"3 sets × 10-12 reps", tag:"LOWER BACK & GLUTES", videoId:"GcT1ntwkjZ0" },
+        { name:"Standing / Seated Calf Raises", target:"4 sets × 15-20 reps", tag:"BIG CALVES", videoId:"B30JglFGx8Y" },
+        { name:"Hanging Leg Raises / Crunches", target:"3 sets to failure", tag:"CORE STRENGTH", videoId:"0wSUjj5j1xo" },
       ]
     },
     day4: {
@@ -499,7 +514,12 @@
             <div class="min-w-0">
               <p class="font-display text-xl leading-tight ${s.done ? 'text-white' : 'text-white'}">${ex.name}</p>
               <p class="font-mono text-[10px] text-[#8A8A8A] mt-0.5">${ex.target}</p>
-              <span class="tag-pill inline-block mt-2 px-2 py-1 rounded-full border border-[#2A2A2A] text-[#39FF6A] bg-[#0D0D0D]">${ex.tag}</span>
+              <div class="flex items-center gap-2 mt-2 flex-wrap">
+                <span class="tag-pill inline-block px-2 py-1 rounded-full border border-[#2A2A2A] text-[#39FF6A] bg-[#0D0D0D]">${ex.tag}</span>
+                <button data-idx="${idx}" data-video="${ex.videoId}" data-name="${ex.name}" class="watch-btn tag-pill inline-flex items-center gap-1 px-2 py-1 rounded-full border border-[#2A2A2A] text-[#8A8A8A] bg-[#0D0D0D] btn-press active:border-[#39FF6A]/50 active:text-[#39FF6A]">
+                  <span class="text-[8px]">▶</span> WATCH FORM
+                </button>
+              </div>
             </div>
           </div>
           <button data-idx="${idx}" class="checkbox-btn check-btn flex-shrink-0 w-9 h-9 rounded-full border-2 flex items-center justify-center btn-press ${s.done ? 'bg-[#39FF6A] border-[#39FF6A]' : 'border-[#2A2A2A] bg-[#0D0D0D]'}">
@@ -537,6 +557,14 @@
         persist(false);
       });
     });
+    list.querySelectorAll(".watch-btn").forEach(btn=>{
+      btn.addEventListener("click", (e)=>{
+        e.stopPropagation();
+        const t = e.currentTarget;
+        openVideoModal(t.dataset.video, t.dataset.name);
+      });
+    });
+
     list.querySelectorAll(".check-btn").forEach(btn=>{
       btn.addEventListener("click", (e)=>{
         const idx = +e.currentTarget.dataset.idx;
@@ -671,6 +699,37 @@
   }
 
   /* ---------------------------------------------------------
+     VIDEO MODAL
+  --------------------------------------------------------- */
+  const videoModal = document.getElementById("videoModal");
+  const videoFrame = document.getElementById("videoModalFrame");
+  const videoTitle = document.getElementById("videoModalTitle");
+  const videoExternal = document.getElementById("videoModalOpenExternal");
+
+  function openVideoModal(videoId, name){
+    if(!videoId) return;
+    videoTitle.textContent = name.toUpperCase() + " — FORM";
+    videoFrame.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0`;
+    videoExternal.href = `https://www.youtube.com/watch?v=${videoId}`;
+    videoModal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeVideoModal(){
+    videoModal.classList.add("hidden");
+    videoFrame.src = "";
+    document.body.style.overflow = "";
+  }
+
+  document.getElementById("videoModalClose").addEventListener("click", closeVideoModal);
+  videoModal.addEventListener("click", (e)=>{
+    if(e.target === videoModal) closeVideoModal();
+  });
+  document.addEventListener("keydown", (e)=>{
+    if(e.key === "Escape" && !videoModal.classList.contains("hidden")) closeVideoModal();
+  });
+
+  /* ---------------------------------------------------------
      COMPLETE BANNER CLICK -> celebratory feedback
   --------------------------------------------------------- */
   document.getElementById("completeBanner").addEventListener("click", ()=>{
@@ -797,7 +856,7 @@
 
   function pauseTimer(){
     timerRunning = false;
-    clearInterval(timerInterval); CV
+    clearInterval(timerInterval);
     timerToggle.textContent = "▶";
   }
 
